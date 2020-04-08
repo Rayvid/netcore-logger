@@ -1,0 +1,52 @@
+﻿# Build and test for now
+# TODO  Add steps that publish symbols, save build artifacts, deploy, and more:
+
+trigger:
+  branches:
+    include:
+    - '*'  # must quote since "*" is a YAML reserved character; we want a string
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: 'Planet.Library.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /restore'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**\*Tests\*.csproj'
+    arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)\TestResults\Coverage\'
+  displayName: Run Tests
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: custom
+    custom: tool
+    arguments: 'install --tool-path . dotnet-reportgenerator-globaltool'
+  displayName: Install ReportGenerator tool
+
+- script: '.\reportgenerator -reports:$(Build.SourcesDirectory)\TestResults\Coverage\coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)\TestResults\Coverage\ -reporttypes:"Cobertura"'
+  displayName: Create reports
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage'
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: $(Build.SourcesDirectory)\TestResults\Coverage\Cobertura.xml

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planet.Library.Common", "Planet.Library.Common\Planet.Library.Common.csproj", "{BA7D4021-696D-4467-AFAF-6420AE7CFBEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planet.Library.Logging", "Planet.Library.Logging\Planet.Library.Logging.csproj", "{B3545160-AA37-4340-8EC1-1F55DD79610A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planet.Library.Tests", "Planet.Library.Tests\Planet.Library.Tests.csproj", "{67C0DF8D-2CDA-4369-92D5-38F5BD34812B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2EF6EC9-3696-413A-AB39-DC7C1982D636}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA7D4021-696D-4467-AFAF-6420AE7CFBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA7D4021-696D-4467-AFAF-6420AE7CFBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA7D4021-696D-4467-AFAF-6420AE7CFBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA7D4021-696D-4467-AFAF-6420AE7CFBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3545160-AA37-4340-8EC1-1F55DD79610A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3545160-AA37-4340-8EC1-1F55DD79610A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3545160-AA37-4340-8EC1-1F55DD79610A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3545160-AA37-4340-8EC1-1F55DD79610A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C0DF8D-2CDA-4369-92D5-38F5BD34812B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C0DF8D-2CDA-4369-92D5-38F5BD34812B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C0DF8D-2CDA-4369-92D5-38F5BD34812B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C0DF8D-2CDA-4369-92D5-38F5BD34812B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {487FCD37-29DB-456F-8A71-51F7E72D31CC}
+	EndGlobalSection
+EndGlobal

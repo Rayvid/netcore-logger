@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Planet.Library.Logging\Planet.Library.Logging.csproj" />
+  </ItemGroup>
+
+</Project>
